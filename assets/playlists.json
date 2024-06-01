@@ -1,0 +1,179 @@
+{
+    "users": [
+        {
+            "userId": 1,
+            "playlists": [
+                {
+                    "id": 11111,
+                    "name": "On Repeat",
+                    "description": "Songs you love right now",
+                    "likes": 1,
+                    "songs": [14000, 14070, 14080, 14035],
+                    "type": "uniquely_yours",
+                    "owner": "spotify",
+                    "clicks": 100
+                },
+                {
+                    "id": 11112,
+                    "name": "My Playlist",
+                    "description": "This is a custom made playlist for which i am writing a very long description aaaaaaaaaaa",
+                    "likes": 0,
+                    "songs": [14000, 14070, 14080, 14035],
+                    "type": "custom",
+                    "owner": "user",
+                    "clicks": 5
+                },
+                {
+                    "id": 11113,
+                    "name": "work playlist",
+                    "description": "",
+                    "likes": 0,
+                    "songs": [14000, 14070, 14080, 14035],
+                    "type": "custom",
+                    "owner": "user",
+                    "clicks": 100
+                },
+                {
+                    "id": 11114,
+                    "name": "french songs",
+                    "description": "",
+                    "likes": 0,
+                    "songs": [],
+                    "type": "custom",
+                    "owner": "user",
+                    "clicks": 3
+                },
+                {
+                    "id": 11113,
+                    "name": "08.22",
+                    "description": "Playlist made in august 2020",
+                    "likes": 3,
+                    "songs": [14000, 14070, 14080, 14035],
+                    "type": "custom",
+                    "owner": "user",
+                    "clicks": 5
+                },
+                {
+                    "id": 11113,
+                    "name": "Oldies",
+                    "description": "Old songs",
+                    "likes": 5,
+                    "songs": [],
+                    "type": "custom",
+                    "owner": "user",
+                    "clicks": 2
+                },
+                {
+                    "id": 33333,
+                    "name": "Rock Mix",
+                    "description": "Playlist description",
+                    "likes": 0,
+                    "songs": [14000, 14001, 14002, 14003, 14070, 14080, 14035],
+                    "type": "spotify_mix",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 33333,
+                    "name": "Pop Mix",
+                    "description": "Playlist description",
+                    "likes": 0,
+                    "songs": [14003, 14070, 14080, 14035],
+                    "type": "spotify_mix",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 33333,
+                    "name": "Jazz Mix",
+                    "description": "Playlist description",
+                    "likes": 0,
+                    "songs": [],
+                    "type": "spotify_mix",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 33333,
+                    "name": "2000s Mix",
+                    "description": "Playlist description",
+                    "likes": 0,
+                    "songs": [14044, 14045, 14046],
+                    "type": "spotify_mix",
+                    "owner": "spotify",
+                    "clicks": 20
+                },
+                {
+                    "id": 33333,
+                    "name": "2010s Mix",
+                    "description": "Playlist description",
+                    "likes": 0,
+                    "songs": [14038, 14029, 14001],
+                    "type": "spotify_mix",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 11111,
+                    "name": "Daily Mix 1",
+                    "description": "Daily mix description",
+                    "likes": 1,
+                    "songs": [14038, 14029, 14001],
+                    "type": "for_user",
+                    "owner": "spotify",
+                    "clicks": 50
+                },
+                {
+                    "id": 11111,
+                    "name": "Daily Mix 2",
+                    "description": "Daily mix description",
+                    "likes": 1,
+                    "songs": [14038, 14029, 14001],
+                    "type": "for_user",
+                    "owner": "spotify",
+                    "clicks": 3
+                },
+                {
+                    "id": 11111,
+                    "name": "Daily Mix 3",
+                    "description": "Daily mix description",
+                    "likes": 1,
+                    "songs": [14038, 14029, 14001],
+                    "type": "for_user",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 11111,
+                    "name": "Daily Mix 4",
+                    "description": "Daily mix description",
+                    "likes": 1,
+                    "songs": [14038, 14029, 14001],
+                    "type": "for_user",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 11111,
+                    "name": "Daily Mix 5",
+                    "description": "Daily mix description",
+                    "likes": 1,
+                    "songs": [14038, 14029, 14001],
+                    "type": "for_user",
+                    "owner": "spotify",
+                    "clicks": 0
+                },
+                {
+                    "id": 11111,
+                    "name": "Daily Mix 6",
+                    "description": "Daily mix description",
+                    "likes": 1,
+                    "songs": [14038, 14029, 14001],
+                    "type": "for_user",
+                    "owner": "spotify",
+                    "clicks": 0
+                }
+            ]
+        }
+    ]
+}
