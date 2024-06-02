@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:spotify/playlist.dart';
+import 'package:spotify/song_screen/web_song_page.dart';
 import '../../song.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -56,7 +57,7 @@ class SongListState extends State<SongList> {
 
   Widget getIcon(int id) {
     IconData icon = isLiked(id) ? Icons.favorite : Icons.favorite_border;
-    return Icon(icon, color: Colors.blue, size: 20);
+    return Icon(icon, color: Color.fromARGB(255, 255, 255, 255), size: 20);
   }
 
   Widget createHeader() {
@@ -188,16 +189,24 @@ class SongListState extends State<SongList> {
 
   Widget createSongEntry(int index, Song song) {
     return isWeb()
-        ? Row(
+        ? GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return WebSongPage(
+                  user: widget.user, playlist: widget.playlist, song: song);
+            }));
+          },
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               createIndex(index.toString()),
               createSongTitle(song.title, song.artist),
               createInfo(song.album, 4),
               createInfo("Date added", 4),
-              createTime(song.length.toString(), song.songId)
+              createTime(song.length.toString(), song.songId),
             ],
-          )
+          ),
+        )
         : Row(
             children: [
               InkWell(
