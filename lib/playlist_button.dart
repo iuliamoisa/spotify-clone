@@ -23,6 +23,7 @@ class PlaylistButton extends StatelessWidget {
           fontWeight: FontWeight.bold,
           fontSize: 13,
           color: Colors.white,
+          letterSpacing: 1.2,
         ));
   }
 

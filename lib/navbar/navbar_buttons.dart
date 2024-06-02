@@ -25,12 +25,13 @@ class NavigationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox( // Modificarea aici
+    return SizedBox( 
       width: 250,
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Color.fromARGB(117, 0, 0, 0), padding: EdgeInsets.all(0)),
+            backgroundColor: Color.fromARGB(90, 0, 0, 0), 
+            padding: EdgeInsets.all(10)),
         onPressed: () {
           if (buttonName == "Home") {
             Navigator.push(context, MaterialPageRoute(builder: (builder) {
@@ -59,10 +60,13 @@ class NavigationButton extends StatelessWidget {
           child: Wrap(
             spacing: 10,
             children: [
-              Icon(matchButtonIcon()),
+              Icon(matchButtonIcon(), color: Colors.white,),
               Text(buttonName,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 15))
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 15,
+                      color: Colors.white,
+                      letterSpacing: 1.0),)
             ],
           ),
         ),

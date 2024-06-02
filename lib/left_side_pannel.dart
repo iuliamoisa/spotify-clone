@@ -56,7 +56,19 @@ class _LeftSidePannelState extends State<LeftSidePannel> {
         mainAxisSize: MainAxisSize.max,
         children: [
           NavBar(user: widget.user),
-          Divider(color: const Color.fromARGB(140, 158, 158, 158), height: 0.1),
+          
+          // Divider(color: const Color.fromARGB(140, 158, 158, 158), height: 0.1, ),
+          Container(
+            margin: EdgeInsets.only(top: 20, bottom: 20), // Specify top and bottom margins
+            child: Divider(
+              color: const Color.fromARGB(140, 158, 158, 158),
+              height: 0.1,
+            ),
+          ),
+
+
+
+
           Expanded(
             child: FutureBuilder<List<Playlist>>(
               future: _userPlaylists,
