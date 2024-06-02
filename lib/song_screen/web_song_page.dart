@@ -3,6 +3,7 @@ import '../playlist.dart';
 import '../user.dart';
 import '../song.dart';
 import 'components/song_progress_indicator.dart';
+import 'dart:math';
 
 class WebSongPage extends StatefulWidget {
   final Playlist playlist;
@@ -129,6 +130,7 @@ class _WebSongPageState extends State<WebSongPage> {
                     fontSize: 25,
                     color: Colors.white,
                   ),
+                  
                 ),
                 SizedBox(height: 5),
                 Text(
@@ -147,13 +149,36 @@ class _WebSongPageState extends State<WebSongPage> {
     );
   }
 
+  // Widget createSongImage(BuildContext context) {
+  //   return SizedBox(
+  //     height: 300,
+  //     width: MediaQuery.of(context).size.width,
+  //     child: Container(
+  //       color: Colors.black,
+  //     ),
+  //   );
+  // }
+
   Widget createSongImage(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      width: MediaQuery.of(context).size.width,
-      child: Container(
-        color: Colors.black,
+  // Generate a random color
+  Color randomColor = Color.fromRGBO(
+    Random().nextInt(256),
+    Random().nextInt(256),
+    Random().nextInt(256),
+    1.0,
+  );
+
+  return SizedBox(
+    height: 300,
+  
+    width: MediaQuery.of(context).size.width,
+    child: Container(
+     decoration: BoxDecoration(
+        color: randomColor,
+        borderRadius: BorderRadius.circular(20.0), // Set the desired radius here
       ),
-    );
-  }
+    ),
+  );
+}
+
 }
