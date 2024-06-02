@@ -10,7 +10,7 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 250,
-      color: Colors.black,
+      color: Color.fromARGB(117, 0, 0, 0),
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -27,7 +27,7 @@ class NavBar extends StatelessWidget {
             user: user,
           ),
           Container(
-            color: Colors.black,
+            color: Color.fromARGB(117, 0, 0, 0),
             height: 20,
           ),
           NavigationButton(

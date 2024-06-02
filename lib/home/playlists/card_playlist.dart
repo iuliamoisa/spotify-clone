@@ -5,6 +5,7 @@ import '../../playlist.dart';
 import '../../platform.dart';
 import '../../user.dart';
 import '../../playlist_screen/playlist_page.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class CardPlaylist extends StatelessWidget {
   Playlist playlist;
@@ -47,13 +48,33 @@ class CardPlaylist extends StatelessWidget {
     return size;
   }
 
+  // Widget createPlaylistImage(double size) {
+  //   return Container(
+  //     decoration: BoxDecoration(color: Colors.blue, borderRadius: getRadius()),
+  //     height: size,
+  //     width: size,
+  //   );
+  // }
+
   Widget createPlaylistImage(double size) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.blue, borderRadius: getRadius()),
-      height: size,
-      width: size,
-    );
-  }
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.blue, 
+      borderRadius: getRadius()
+    ),
+    height: size,
+    width: size,
+    child: ClipRRect(
+      borderRadius: getRadius(),
+      child: CachedNetworkImage(
+        imageUrl: playlist.imageUrl,
+        placeholder: (context, url) => CircularProgressIndicator(),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+        fit: BoxFit.cover,
+      ),
+    ),
+  );
+}
 
   Widget createPlaylistTitle() {
     return Container(
@@ -62,7 +83,7 @@ class CardPlaylist extends StatelessWidget {
         playlist.name,
         overflow: TextOverflow.ellipsis,
         style: const TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.amber),
+            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.white),
       ),
     );
   }

@@ -100,7 +100,7 @@ class _TopPlaylistsState extends State<TopPlaylists> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.black38,
+        color: const Color.fromARGB(168, 0, 0, 0),
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(setPaddingSize()),
         child: createTopPlaylistsBody());

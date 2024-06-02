@@ -4,174 +4,191 @@
             "userId": 1,
             "playlists": [
                 {
-                    "id": 11111,
+                    "id": 1,
                     "name": "On Repeat",
                     "description": "Songs you love right now",
-                    "likes": 1,
+                    "likes": 3,
                     "songs": [14000, 14070, 14080, 14035],
                     "type": "uniquely_yours",
                     "owner": "spotify",
-                    "clicks": 100
+                    "clicks": 100,
+                    "imageUrl": "https://daily-mix.scdn.co/covers/on_repeat/PZN_On_Repeat2_DEFAULT-en.jpg"
                 },
                 {
-                    "id": 11112,
-                    "name": "My Playlist",
-                    "description": "This is a custom made playlist for which i am writing a very long description aaaaaaaaaaa",
-                    "likes": 0,
-                    "songs": [14000, 14070, 14080, 14035],
+                    "id": 2,
+                    "name": "Morniiiing",
+                    "description": "morning playlist! 🌞",
+                    "likes": 7,
+                    "songs": [14040, 14070, 14080, 14090],
                     "type": "custom",
                     "owner": "user",
-                    "clicks": 5
+                    "clicks": 5,
+                    "imageUrl": "https://images.unsplash.com/photo-1526385159909-196a9ac0ef64?q=80&w=1952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11113,
-                    "name": "work playlist",
-                    "description": "",
-                    "likes": 0,
-                    "songs": [14000, 14070, 14080, 14035],
+                    "id": 3,
+                    "name": "workout mode",
+                    "description": "Energize & Elevate",
+                    "likes": 120,
+                    "songs": [14000, 14070, 14080, 14035, 14040, 14070, 14080, 14090],
                     "type": "custom",
                     "owner": "user",
-                    "clicks": 100
+                    "clicks": 100,
+                    "imageUrl": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11114,
-                    "name": "french songs",
-                    "description": "",
-                    "likes": 0,
+                    "id": 4,
+                    "name": "latinooo 🌴",
+                    "description": "latino vibes",
+                    "likes": 1,
                     "songs": [],
                     "type": "custom",
                     "owner": "user",
-                    "clicks": 3
+                    "clicks": 3,
+                    "imageUrl": "https://images.unsplash.com/photo-1603077787992-7efca4cdffa5?q=80&w=1892&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11113,
-                    "name": "08.22",
-                    "description": "Playlist made in august 2020",
-                    "likes": 3,
-                    "songs": [14000, 14070, 14080, 14035],
+                    "id": 5,
+                    "name": "2.0",
+                    "description": "🎶 all time favorites 🎶",
+                    "likes": 9, 
+                    "songs": [14025, 14026, 14027, 14028, 14029, 14030],
                     "type": "custom",
                     "owner": "user",
-                    "clicks": 5
+                    "clicks": 51,
+                    "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11113,
-                    "name": "Oldies",
-                    "description": "Old songs",
-                    "likes": 5,
-                    "songs": [],
+                    "id": 6,
+                    "name": "nostalgic mood",
+                    "description": "rainy days kind of playlist",
+                    "likes": 210,
+                    "songs": [14030, 14055, 14031, 14058, 14061],
                     "type": "custom",
                     "owner": "user",
-                    "clicks": 2
+                    "clicks": 100,
+                    "imageUrl": "https://images.unsplash.com/photo-1568877430331-be9d89367767?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 33333,
+                    "id": 7,
                     "name": "Rock Mix",
-                    "description": "Playlist description",
+                    "description": "Oasis and more...",
                     "likes": 0,
-                    "songs": [14000, 14001, 14002, 14003, 14070, 14080, 14035],
+                    "songs": [14061, 14062, 14063, 14064, 14065, 14066, 14067, 14068, 14069],
                     "type": "spotify_mix",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 0,
+                    "imageUrl": "https://images.unsplash.com/photo-1629276301820-0f3eedc29fd0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 33333,
-                    "name": "Pop Mix",
-                    "description": "Playlist description",
-                    "likes": 0,
-                    "songs": [14003, 14070, 14080, 14035],
+                    "id": 8,
+                    "name": "Hozier favs",
+                    "description": "💖 best songs from Hozier",
+                    "likes": 17,
+                    "songs": [14020, 14021, 14022, 14023, 14024],
+                    "type": "custom",
+                    "owner": "spotify",
+                    "clicks": 17,
+                    "imageUrl": "https://images.unsplash.com/photo-1453090927415-5f45085b65c0?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 9,
+                    "name": "Release Radar",
+                    "description": "Discover the Latest Tracks from Your Followed Artists and Handpicked Singles Just for You. Updated Every Friday.",
+                    "likes": 2,
+                    "songs": [14010, 14011, 14018],
                     "type": "spotify_mix",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 3,
+                    "imageUrl": "https://images.fastcompany.com/image/upload/fc/3062540-inline-i-2-release-radar.webp"
                 },
                 {
-                    "id": 33333,
-                    "name": "Jazz Mix",
-                    "description": "Playlist description",
-                    "likes": 0,
-                    "songs": [],
-                    "type": "spotify_mix",
-                    "owner": "spotify",
-                    "clicks": 0
-                },
-                {
-                    "id": 33333,
-                    "name": "2000s Mix",
-                    "description": "Playlist description",
+                    "id": 10,
+                    "name": "Nostalgia 2000s Mix",
+                    "description": "Nostalgia 2000s music picked just for you",
                     "likes": 0,
                     "songs": [14044, 14045, 14046],
                     "type": "spotify_mix",
                     "owner": "spotify",
-                    "clicks": 20
+                    "clicks": 2,
+                    "imageUrl": "https://i1.sndcdn.com/artworks-zh0D6HD77j1MSxNj-OQzJKQ-t500x500.jpg"
                 },
                 {
-                    "id": 33333,
-                    "name": "2010s Mix",
-                    "description": "Playlist description",
+                    "id": 11,
+                    "name": "Nostalgia 2010s Mix",
+                    "description": "Nostalgia 2010s music picked just for you",
                     "likes": 0,
                     "songs": [14038, 14029, 14001],
                     "type": "spotify_mix",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 0,
+                    "imageUrl": "https://mosaic.scdn.co/640/ab67616d00001e0218b8088fe0c3dbf78398b55aab67616d00001e0266c3eb32692a0ae487079cf1ab67616d00001e026ff8bc258e3ebc835ffe14caab67616d00001e02fc8633e22a7dba6aab817bff"
                 },
                 {
-                    "id": 11111,
+                    "id": 12,
                     "name": "Daily Mix 1",
                     "description": "Daily mix description",
                     "likes": 1,
                     "songs": [14038, 14029, 14001],
                     "type": "for_user",
                     "owner": "spotify",
-                    "clicks": 50
+                    "clicks": 50,
+                    "imageUrl": "https://images.unsplash.com/photo-1556139954-ec19cce61d61?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11111,
+                    "id": 13,
                     "name": "Daily Mix 2",
                     "description": "Daily mix description",
                     "likes": 1,
                     "songs": [14038, 14029, 14001],
                     "type": "for_user",
                     "owner": "spotify",
-                    "clicks": 3
+                    "clicks": 3,
+                    "imageUrl": "https://images.unsplash.com/photo-1556139954-ec19cce61d61?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11111,
+                    "id": 14,
                     "name": "Daily Mix 3",
                     "description": "Daily mix description",
                     "likes": 1,
                     "songs": [14038, 14029, 14001],
                     "type": "for_user",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 0,
+                    "imageUrl": "https://images.unsplash.com/photo-1556139954-ec19cce61d61?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11111,
+                    "id": 15,
                     "name": "Daily Mix 4",
                     "description": "Daily mix description",
                     "likes": 1,
                     "songs": [14038, 14029, 14001],
                     "type": "for_user",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 0,
+                    "imageUrl": "https://images.unsplash.com/photo-1556139954-ec19cce61d61?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11111,
+                    "id": 16,
                     "name": "Daily Mix 5",
                     "description": "Daily mix description",
                     "likes": 1,
                     "songs": [14038, 14029, 14001],
                     "type": "for_user",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 0,
+                    "imageUrl": "https://images.unsplash.com/photo-1556139954-ec19cce61d61?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 },
                 {
-                    "id": 11111,
+                    "id": 17,
                     "name": "Daily Mix 6",
                     "description": "Daily mix description",
                     "likes": 1,
                     "songs": [14038, 14029, 14001],
                     "type": "for_user",
                     "owner": "spotify",
-                    "clicks": 0
+                    "clicks": 0,
+                    "imageUrl": "https://images.unsplash.com/photo-1556139954-ec19cce61d61?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 }
             ]
         }

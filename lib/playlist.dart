@@ -8,6 +8,7 @@ class Playlist {
   int songsCount = 0;
   String duration = "";
   List songs = [];
+  String imageUrl = "";
 
   Playlist(Map playlistData) {
     playlistId = playlistData['id'];
@@ -18,6 +19,7 @@ class Playlist {
     likes = playlistData['likes'];
     songs = playlistData['songs'];
     songsCount = songs.length;
+    imageUrl = playlistData['imageUrl'];
   }
 }
 

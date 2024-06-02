@@ -246,23 +246,29 @@ class SongListState extends State<SongList> {
   Widget loadSongs() {
     return FutureBuilder(
         future: getSongs(),
-        builder: (BuildContext context, AsyncSnapshot<List> snapshot) =>
-            snapshot.hasData
-                ? ListView.separated(
+        builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
+            if (snapshot.hasData) {
+                // Ensure the length of snapshot.data is used as itemCount
+                return ListView.separated(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: widget.playlist.songs.length,
+                    itemCount: snapshot.data!.length,
                     separatorBuilder: (BuildContext context, int index) {
-                      return const SizedBox(
-                        height: 5,
-                      );
+                        return const SizedBox(
+                            height: 5,
+                        );
                     },
                     itemBuilder: (BuildContext context, int index) {
-                      return createSongEntry(
-                          index + 1, Song(snapshot.data![index]));
-                    })
-                : const Center(child: CircularProgressIndicator()));
-  }
+                        return createSongEntry(
+                            index + 1, Song(snapshot.data![index]));
+                    });
+            } else {
+                return const Center(child: CircularProgressIndicator());
+            }
+        }
+    );
+}
+
 
   Widget createSongList() {
     return Column(

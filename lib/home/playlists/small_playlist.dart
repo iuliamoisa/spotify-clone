@@ -3,6 +3,7 @@ import '../../playlist.dart';
 import '../../platform.dart';
 import '../../user.dart';
 import '../../playlist_screen/playlist_page.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SmallPlaylist extends StatelessWidget {
   final Playlist playlist;
@@ -45,8 +46,18 @@ class SmallPlaylist extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(5), bottomLeft: Radius.circular(5))),
       width: size,
-    );
-  }
+    child: ClipRRect(
+      borderRadius:  BorderRadius.only(
+              topLeft: Radius.circular(5), bottomLeft: Radius.circular(5)),
+      child: CachedNetworkImage(
+        imageUrl: playlist.imageUrl,
+        placeholder: (context, url) => CircularProgressIndicator(),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+        fit: BoxFit.cover,
+      ),
+    ),
+  );
+}
 
   Widget createPlaylistTitle() {
     return Text(

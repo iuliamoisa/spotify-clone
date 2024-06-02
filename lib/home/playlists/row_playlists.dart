@@ -78,13 +78,14 @@ class _PlaylistRowState extends State<PlaylistRow> {
 
     if (rowType == "uniquely_yours") {
       rowPlaylists.add({
-        "id": 55555,
+        "id": 0,
         "name": "Liked Songs",
         "description": "",
         "type": "uniquely_yours",
         "owner": "user",
         "likes": 1,
-        "songs": widget.user.likedSongs
+        "songs": widget.user.likedSongs,
+        "imageUrl": "https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"
       });
     }
 
@@ -127,7 +128,7 @@ class _PlaylistRowState extends State<PlaylistRow> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.black38,
+        color: const Color.fromARGB(188, 0, 0, 0),
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(getPadding()),
         child: SingleChildScrollView(

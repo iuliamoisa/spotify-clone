@@ -30,7 +30,7 @@ class NavigationButton extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black, padding: EdgeInsets.all(0)),
+            backgroundColor: Color.fromARGB(117, 0, 0, 0), padding: EdgeInsets.all(0)),
         onPressed: () {
           if (buttonName == "Home") {
             Navigator.push(context, MaterialPageRoute(builder: (builder) {
@@ -40,13 +40,14 @@ class NavigationButton extends StatelessWidget {
             Navigator.push(context, MaterialPageRoute(builder: (builder) {
               return PlaylistPage(
                 playlist: Playlist({
-                  "id": 55555,
+                  "id": 0,
                   "name": "Liked Songs",
                   "description": "",
                   "type": "uniquely_yours",
                   "owner": "user",
                   "likes": 1,
-                  "songs": user.likedSongs
+                  "songs": user.likedSongs,
+                  "imageUrl": "https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"
                 }),
                 user: user,
               );

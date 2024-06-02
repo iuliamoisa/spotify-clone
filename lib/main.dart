@@ -116,8 +116,11 @@ import 'home/home.dart';
 import 'user.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:flutter/rendering.dart';
+
 
 void main() {
+  debugPaintSizeEnabled = false;
   runApp(MaterialApp(home: MyApp()));
 }
 
@@ -162,13 +165,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     if (isWeb()) {
-      return MaterialApp(home: Scaffold(body: createUserSessionApp()));
+      return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Scaffold(body: createUserSessionApp()));
     }
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      body: createUserSessionApp(),
-    ));
+          body: createUserSessionApp(),
+        ));
   }
 }
-

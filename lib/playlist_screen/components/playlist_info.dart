@@ -5,6 +5,7 @@ import '../../playlist.dart';
 import '../../platform.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class PlaylistInfo extends StatefulWidget {
   Playlist playlist;
@@ -79,13 +80,30 @@ class _PlaylistInfoState extends State<PlaylistInfo> {
     );
   }
 
+  // Widget createPlaylistImage() {
+  //   return Container(
+  //     height: isWeb() ? 225 : 200,
+  //     width: isWeb() ? 225 : 200,
+  //     color: Colors.green,
+  //   );
+  // }
+
   Widget createPlaylistImage() {
-    return Container(
-      height: isWeb() ? 225 : 200,
-      width: isWeb() ? 225 : 200,
-      color: Colors.black,
-    );
-  }
+  return Container(
+    height: isWeb() ? 225 : 200,
+    width: isWeb() ? 225 : 200,
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(10), // Adjust border radius as needed
+      child: CachedNetworkImage(
+        imageUrl: widget.playlist.imageUrl,
+        placeholder: (context, url) => CircularProgressIndicator(),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+        fit: BoxFit.cover,
+      ),
+    ),
+  );
+}
+
 
   Widget createDescription() {
     double size = isWeb() ? 15 : 12;
