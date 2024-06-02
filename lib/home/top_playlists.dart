@@ -17,11 +17,11 @@ class _TopPlaylistsState extends State<TopPlaylists> {
   String getMessage() {
     DateTime dateTime = DateTime.now();
     int currentHour = dateTime.hour;
-    if (currentHour >= 5 && currentHour < 12) {
+    if (currentHour >= 6 && currentHour < 12) {
       return "Good morning";
-    } else if (currentHour >= 12 && currentHour < 17) {
+    } else if (currentHour >= 12 && currentHour < 18) {
       return "Good afternoon";
-    } else if (currentHour >= 17 && currentHour < 24) {
+    } else if (currentHour >= 18 && currentHour < 24) {
       return "Good evening";
     }
     return "Hello";
@@ -35,51 +35,52 @@ class _TopPlaylistsState extends State<TopPlaylists> {
     return isWeb() ? 30 : 5;
   }
 
-  int sortByClicks(dynamic a, dynamic b) {
-    final propA = a['clicks'];
-    final propB = b['clicks'];
-    if (propA < propB) {
+  int sortPlaylistsByNrOfClicks(dynamic first, dynamic second) {
+    final nr1 = first['clicks'];
+    final nr2 = second['clicks'];
+    if (nr1 < nr2) {
       return 1;
-    } else if (propA > propB) {
+    } else if (nr1 > nr2) {
       return -1;
     }
     return 0;
   }
 
-  Future<List> getUserTopSixPlaylists() async {
+  Future<List> getTopSixPlaylists() async {
     List userPlaylists = [];
     final String response =
         await rootBundle.loadString('assets/playlists.json');
     final data = await json.decode(response);
     setState(() {
       List users = data['users'];
-      for (var u in users) {
-        if (u['userId'] == widget.user.id) {
-          userPlaylists = u['playlists'];
+      for (var user in users) {
+        if (user['userId'] == widget.user.id) {
+          userPlaylists = user['playlists'];
         }
       }
     });
 
-    userPlaylists.sort(sortByClicks);
-    // Using print is discouraged in production code, consider using a logging framework if needed
-    // print(userPlaylists.take(6).toList());
-
+    userPlaylists.sort(sortPlaylistsByNrOfClicks);
     return userPlaylists.take(6).toList();
   }
 
-  Widget createSectionTitle() {
-    return Text(
+Widget createSectionTitle() {
+  return Padding(
+    padding: EdgeInsets.only(top: 20.0), 
+    child: Text(
       getMessage(),
       style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: setMessageSize(),
           color: Colors.white),
-    );
-  }
+    ),
+  );
+}
+
 
   Widget loadPlaylists() {
     return FutureBuilder(
-      future: getUserTopSixPlaylists(),
+      future: getTopSixPlaylists(),
       builder: (BuildContext context, AsyncSnapshot<List> snapshot) =>
           snapshot.hasData
               ? GridPlaylists(
@@ -92,7 +93,8 @@ class _TopPlaylistsState extends State<TopPlaylists> {
 
   Widget createTopPlaylistsBody() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [createSectionTitle(), loadPlaylists()],
     );
   }
@@ -102,7 +104,7 @@ class _TopPlaylistsState extends State<TopPlaylists> {
     return Container(
         color: const Color.fromARGB(168, 0, 0, 0),
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(setPaddingSize()),
+        padding: EdgeInsets.zero,
         child: createTopPlaylistsBody());
   }
 }

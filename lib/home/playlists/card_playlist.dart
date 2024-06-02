@@ -59,7 +59,7 @@ class CardPlaylist extends StatelessWidget {
   Widget createPlaylistImage(double size) {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.blue, 
+      color: Colors.red, 
       borderRadius: getRadius()
     ),
     height: size,

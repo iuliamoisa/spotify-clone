@@ -14,11 +14,13 @@ class Home extends StatelessWidget {
 
   Widget createHomeBody(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
     
     return Expanded(
       child: Container(
         color: Color.fromRGBO(26, 26, 26, 1),
         height: screenHeight,
+        width: screenWidth,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

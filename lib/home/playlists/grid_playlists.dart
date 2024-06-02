@@ -10,11 +10,11 @@ class GridPlaylists extends StatelessWidget {
   GridPlaylists({super.key, required this.playlists, required this.user});
 
   double setHorizontalSpacing() {
-    return isWeb() ? 10 : 5;
+    return isWeb() ? 10 : 10;
   }
 
   double setVerticalSpacing() {
-    return isWeb() ? 20 : 5;
+    return isWeb() ? 20 : 35;
   }
 
   Widget createShortRow(Playlist playlist1, Playlist playlist2) {
@@ -66,7 +66,7 @@ class GridPlaylists extends StatelessWidget {
   Widget build(BuildContext context) {
     if (MediaQuery.of(context).size.width < 1250) {
       return Container(
-        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 10),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -95,7 +95,6 @@ class GridPlaylists extends StatelessWidget {
       );
     }
     return Container(
-      //color: Colors.black38,
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

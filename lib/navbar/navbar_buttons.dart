@@ -47,6 +47,7 @@ class NavigationButton extends StatelessWidget {
                   "type": "uniquely_yours",
                   "owner": "user",
                   "likes": 1,
+                  "clicks": 100,
                   "songs": user.likedSongs,
                   "imageUrl": "https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"
                 }),

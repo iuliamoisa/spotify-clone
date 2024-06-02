@@ -65,9 +65,9 @@ class _PlaylistRowState extends State<PlaylistRow> {
     
     setState(() {
       List users = data['users'];
-      for (var u in users) {
-        if (u['userId'] == widget.user.id) {
-          userPlaylists = u['playlists'];
+      for (var user in users) {
+        if (user['userId'] == widget.user.id) {
+          userPlaylists = user['playlists'];
         }
       }
     });
@@ -84,6 +84,7 @@ class _PlaylistRowState extends State<PlaylistRow> {
         "type": "uniquely_yours",
         "owner": "user",
         "likes": 1,
+        "clicks": 100,
         "songs": widget.user.likedSongs,
         "imageUrl": "https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"
       });
