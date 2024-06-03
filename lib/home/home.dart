@@ -27,16 +27,6 @@ class Home extends StatelessWidget {
             children: [
               TopPlaylists(user: user),
               PlaylistRow(
-                rowName: "Your top mixes",
-                user: user,
-                rowType: "spotify_mix",
-              ),
-              PlaylistRow(
-                rowName: "Made for ${user.username}",
-                user: user,
-                rowType: "for_user",
-              ),
-              PlaylistRow(
                 rowName: "Uniquely yours",
                 user: user,
                 rowType: "uniquely_yours",
@@ -46,6 +36,18 @@ class Home extends StatelessWidget {
                 user: user,
                 rowType: "custom",
               ),
+              PlaylistRow(
+                rowName: "Your top mixes",
+                user: user,
+                rowType: "spotify_mix",
+              ),
+              PlaylistRow(
+                rowName: "Made for ${user.username}",
+                user: user,
+                rowType: "for_user",
+              ),
+              
+              
             ],
           ),
         ),

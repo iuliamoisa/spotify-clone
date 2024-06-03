@@ -19,20 +19,20 @@ class SongList extends StatefulWidget {
 }
 
 class SongListState extends State<SongList> {
-  Future<List> getSongs() async {
-    List playlistSongs = [];
-    final String response = await rootBundle.loadString('assets/songs.json');
-    final data = await json.decode(response);
-    setState(() {
-      List songs = data['songs'];
-      for (var song in songs) {
-        if (widget.playlist.songs.contains(song['songId'])) {
-          playlistSongs.add(song);
-        }
-      }
-    });
-    return playlistSongs;
+ Future<List<Map<String, dynamic>>> getSongs() async {
+  List<Map<String, dynamic>> playlistSongs = [];
+  final String response = await rootBundle.loadString('assets/songs.json');
+  final data = await json.decode(response);
+  List songs = data['songs'];
+
+  for (var song in songs) {
+    if (widget.playlist.songs.contains(song['songId'])) {
+      playlistSongs.add(song);
+    }
   }
+  return playlistSongs;
+}
+
 
   Future updateLikedSongs(int userId, int songId) async {
     final String response = await rootBundle.loadString('assets/users.json');
@@ -187,9 +187,12 @@ class SongListState extends State<SongList> {
             )));
   }
 
-  Widget createSongEntry(int index, Song song) {
-    return isWeb()
-        ? GestureDetector(
+  Widget createSongEntry(int index, Map<String, dynamic> songData) {
+  Song song = Song(songData);
+  String dateAdded = songData['dateAdded']; // Assume that dateAdded is in the JSON
+
+  return isWeb()
+      ? GestureDetector(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return WebSongPage(
@@ -202,81 +205,82 @@ class SongListState extends State<SongList> {
               createIndex(index.toString()),
               createSongTitle(song.title, song.artist),
               createInfo(song.album, 4),
-              createInfo("Date added", 4),
+              createInfo(dateAdded, 4), // Display the actual date added
               createTime(song.length.toString(), song.songId),
             ],
           ),
         )
-        : Row(
-            children: [
-              InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) {
-                      return AndroidSongPage(
-                          user: widget.user,
-                          playlist: widget.playlist,
-                          song: song);
-                    }));
-                  },
-                  child: SizedBox(
-                      width: 250,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            song.title,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17,
-                                color: Colors.white),
-                          ),
-                          Container(
-                            height: 5,
-                          ),
-                          Text(
-                            song.artist,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13,
-                                color: Colors.grey),
-                          )
-                        ],
-                      ))),
-              const Spacer(),
-              createLikeButton(song.songId),
-              const Icon(Icons.more_vert, color: Colors.white, size: 30)
-            ],
-          );
-  }
+      : Row(
+          children: [
+            InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (builder) {
+                    return AndroidSongPage(
+                        user: widget.user,
+                        playlist: widget.playlist,
+                        song: song);
+                  }));
+                },
+                child: SizedBox(
+                    width: 250,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          song.title,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: Colors.white),
+                        ),
+                        Container(
+                          height: 5,
+                        ),
+                        Text(
+                          song.artist,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    ))),
+            const Spacer(),
+            createLikeButton(song.songId),
+            const Icon(Icons.more_vert, color: Colors.white, size: 30)
+          ],
+        );
+}
+
 
   Widget loadSongs() {
-    return FutureBuilder(
-        future: getSongs(),
-        builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
-            if (snapshot.hasData) {
-                // Ensure the length of snapshot.data is used as itemCount
-                return ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: snapshot.data!.length,
-                    separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(
-                            height: 5,
-                        );
-                    },
-                    itemBuilder: (BuildContext context, int index) {
-                        return createSongEntry(
-                            index + 1, Song(snapshot.data![index]));
-                    });
-            } else {
-                return const Center(child: CircularProgressIndicator());
-            }
-        }
-    );
+  return FutureBuilder(
+      future: getSongs(),
+      builder: (BuildContext context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
+          if (snapshot.hasData) {
+              return ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: snapshot.data!.length,
+                  separatorBuilder: (BuildContext context, int index) {
+                      return const SizedBox(
+                          height: 5,
+                      );
+                  },
+                  itemBuilder: (BuildContext context, int index) {
+                      return createSongEntry(
+                          index + 1, snapshot.data![index]);
+                  });
+          } else {
+              return const Center(child: CircularProgressIndicator());
+          }
+      }
+  );
 }
+
 
 
   Widget createSongList() {

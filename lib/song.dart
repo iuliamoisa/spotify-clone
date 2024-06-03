@@ -4,6 +4,8 @@ class Song {
   String artist = "Artist Name";
   String album = "Album Name";
   double length = 0;
+  String dateAdded = "";
+  
 
   Song(Map songData) {
     songId = songData['songId'];
@@ -11,6 +13,7 @@ class Song {
     artist = songData['artist'];
     album = songData['album'];
     length = songData['length'];
+    dateAdded = songData['dateAdded'];
   }
 }
 

@@ -26,7 +26,7 @@ class PlaylistRow extends StatefulWidget {
 
 class _PlaylistRowState extends State<PlaylistRow> {
   double getPadding() {
-    return isWeb() ? 30 : 10;
+    return isWeb() ? 30 : 15;
   }
 
   List<Widget> createPlaylistCards(BuildContext context, List playlists, String rowType) {
@@ -82,8 +82,8 @@ class _PlaylistRowState extends State<PlaylistRow> {
         "name": "Liked Songs",
         "description": "",
         "type": "uniquely_yours",
-        "owner": "user",
-        "likes": 1,
+        "owner": widget.user.username,
+        "likes": 10,
         "clicks": 100,
         "songs": widget.user.likedSongs,
         "imageUrl": "https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"

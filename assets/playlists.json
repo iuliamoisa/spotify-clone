@@ -94,7 +94,7 @@
                 {
                     "id": 9,
                     "name": "Release Radar",
-                    "description": "Discover the Latest Tracks from Your Followed Artists and Handpicked Singles Just for You. Updated Every Friday.",
+                    "description": "Discover the Latest Tracks from Your Artists and Handpicked Singles Just for You.",
                     "likes": 2,
                     "songs": [14010, 14011, 14018],
                     "type": "spotify_mix",

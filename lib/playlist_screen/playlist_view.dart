@@ -19,10 +19,11 @@ List<Song> createSongList() {
     // Creează un obiect Map pentru datele cântecului
     Map<String, dynamic> songData = {
       'songId': songId,
-      'title': 'Song Title', // Titlul cântecului poate fi inițializat cu o valoare implicită
-      'artist': 'Artist Name', // Artistul cântecului poate fi inițializat cu o valoare implicită
-      'album': 'Album Name', // Albumul cântecului poate fi inițializat cu o valoare implicită
-      'length': 0.0, // Lungimea cântecului poate fi inițializată cu o valoare implicită
+      'title': 'Song Title', 
+      'artist': 'Artist Name', 
+      'album': 'Album Name', 
+      'length': 0.0, 
+      'dateAdded': 'Unknown date',
     };
     songs.add(Song(songData)); // Inițializează un obiect Song folosind datele create
   }

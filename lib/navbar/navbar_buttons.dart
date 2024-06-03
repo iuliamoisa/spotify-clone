@@ -1,13 +1,12 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, must_be_immutable, prefer_const_constructors
-
 import 'package:flutter/material.dart';
+import 'package:spotify/home/home.dart';
 import '../user.dart';
-import '../home/home.dart';
-import '../playlist_screen/playlist_page.dart';
-import '../playlist.dart';
+import '../search_page.dart'; // Importăm pagina de căutare
+import '../library_page.dart'; // Importăm pagina de bibliotecă
+
 class NavigationButton extends StatelessWidget {
-  String buttonName;
-  User user;
+  final String buttonName;
+  final User user;
   NavigationButton({super.key, required this.buttonName, required this.user});
 
   IconData matchButtonIcon() {
@@ -33,26 +32,18 @@ class NavigationButton extends StatelessWidget {
             backgroundColor: Color.fromARGB(90, 0, 0, 0), 
             padding: EdgeInsets.all(10)),
         onPressed: () {
-          if (buttonName == "Home") {
+          if (buttonName == "Search") {
+            Navigator.push(context, MaterialPageRoute(builder: (builder) {
+              return SearchPage(user: user);
+            }));
+          } else if (buttonName == 'Your library') {
+            Navigator.push(context, MaterialPageRoute(builder: (builder) {
+              return LibraryPage(user: user);
+            }));
+          }
+          else if (buttonName == "Home") {
             Navigator.push(context, MaterialPageRoute(builder: (builder) {
               return Home(user: user);
-            }));
-          } else if (buttonName == "Liked Songs") {
-            Navigator.push(context, MaterialPageRoute(builder: (builder) {
-              return PlaylistPage(
-                playlist: Playlist({
-                  "id": 0,
-                  "name": "Liked Songs",
-                  "description": "",
-                  "type": "uniquely_yours",
-                  "owner": "user",
-                  "likes": 1,
-                  "clicks": 100,
-                  "songs": user.likedSongs,
-                  "imageUrl": "https://i.scdn.co/image/ab67706c0000da8470d229cb865e8d81cdce0889"
-                }),
-                user: user,
-              );
             }));
           }
         },
