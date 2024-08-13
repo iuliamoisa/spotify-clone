@@ -1,16 +1,21 @@
-# spotify
+# Spotify App Clone (mobile + web)
 
-A new Flutter project.
+This project is a clone of the Spotify app, developed using Flutter to demonstrate proficiency in building cross-platform applications. It features both mobile and web interfaces, replicating key functionalities and user interactions of the original Spotify app.
 
-## Getting Started
+## Technologies Used
+- Flutter: Framework for building the mobile and web application.
+- Dart: Programming language used with Flutter for building the app’s logic and UI.
 
-This project is a starting point for a Flutter application.
+## Features
+  a. Left Side panel (web) / bottom nav bar (mobile)
+    i. Home/Your Library/Search(not functional)
+    ii. Playlists
+  b. Home page (mobile + web)
+    i. Frequent playlists (tiles)
+    ii. Made for User (cards)
+    iii. Other categories
+  c. Playlist view (mobile + web)
+  d. Song playing view (no video, just background)
+  e. Like song functionality (liked songs playlist)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
